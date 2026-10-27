@@ -1,61 +1,86 @@
-from turtle import *
+import turtle as t
 from math import sqrt
-
-screensize(2000,2000)
-speed(0)
 
 
 def ice_fractal_1(order: int, size: float) -> None:
     if order == 0:
-        fd(size)
+        t.fd(size)
         return
     ice_fractal_1(order - 1, size / 2)
-    lt(90)
+    t.lt(90)
     ice_fractal_1(order - 1, size / 4)
-    rt(180)
+    t.rt(180)
     ice_fractal_1(order - 1, size / 4)
-    lt(90)
+    t.lt(90)
     ice_fractal_1(order - 1, size / 2)
 
 
 def ice_fractal_2(order: int, size: float) -> None:
     if order == 0:
-        fd(size)
+        t.fd(size)
         return
     ice_fractal_2(order - 1, size)
-    lt(120)
+    t.lt(120)
     ice_fractal_2(order - 1, size / 2)
-    rt(180)
+    t.rt(180)
     ice_fractal_2(order - 1, size / 2)
-    lt(120)
+    t.lt(120)
     ice_fractal_2(order - 1, size / 2)
-    rt(180)
+    t.rt(180)
     ice_fractal_2(order - 1, size / 2)
-    lt(120)
+    t.lt(120)
     ice_fractal_2(order - 1, size)
 
 
 def levy(order: int, size: float) -> None:
     if order == 0:
-        fd(size)
+        t.fd(size)
         return
-    lt(45)
+    t.lt(45)
     levy(order - 1, size / sqrt(2))
-    rt(90)
+    t.rt(90)
     levy(order - 1, size / sqrt(2))
-    lt(45)
+    t.lt(45)
 
 
 def dragon(order: int, size: float, direction: int = 1) -> None:
     if order == 0:
-        fd(size)
+        t.fd(size)
         return
-    lt(45)
+    t.lt(45)
     dragon(order - 1, size / sqrt(2), 1)
-    rt(90 * direction)
+    t.rt(90 * direction)
     dragon(order - 1, size / sqrt(2), -1)
-    rt(45)
+    t.rt(45)
 
 
-hideturtle()
-done()
+def draw_ice_fractal_1(order: int, size: float) -> None:
+    t.pu()
+    t.setheading(0)
+    t.goto(-size / 2, 0)
+    t.pd()
+    ice_fractal_1(order, size)
+
+
+def draw_ice_fractal_2(order: int, size: float) -> None:
+    t.pu()
+    t.setheading(0)
+    t.goto(-size / 2, 0)
+    t.pd()
+    ice_fractal_2(order, size)
+
+
+def draw_levy(order: int, size: float) -> None:
+    t.pu()
+    t.setheading(0)
+    t.goto(-size / 2, 0)
+    t.pd()
+    levy(order, size)
+
+
+def draw_dragon(order: int, size: float) -> None:
+    t.pu()
+    t.setheading(0)
+    t.goto(-size / 2, 0)
+    t.pd()
+    dragon(order, size)
