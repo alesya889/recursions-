@@ -1,5 +1,7 @@
 import turtle
-t=turtle.Turtle()
+
+t = turtle.Turtle()
+
 
 def binary_tree(depth: int, size: float, angle: float):
     if depth == 0:
@@ -19,6 +21,7 @@ def binary_tree(depth: int, size: float, angle: float):
     t.right(angle)
     return
 
+
 def branch(size, n):
     if n == 0:
         t.left(180)
@@ -37,6 +40,7 @@ def branch(size, n):
     t.left(180)
     t.forward(size)
 
+
 def draw_binary_tree(depth: int, size: float, angle: float):
     t.speed(0)
     t.penup()
@@ -45,6 +49,7 @@ def draw_binary_tree(depth: int, size: float, angle: float):
     binary_tree(depth, size, angle)
     t.setheading(0)
     return
+
 
 def draw_branch(size, n):
     t.speed(0)
