@@ -224,8 +224,6 @@ def main() -> None:
         else:
             print("Неверный пункт меню. Попробуйте снова.")
 
-        #turtle.done()
-
 
 if __name__ == "__main__":
     main()
