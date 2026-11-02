@@ -55,7 +55,7 @@ def get_float_input(txt: str, minval: float = None, maxval: float = None) -> flo
 
             return val
         except ValueError:
-            print("Ошибка. Введите целое число")
+            print("Ошибка. Введите корректное число")
 
 
 def draw_centered(draw_func, *args) -> None:
