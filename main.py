@@ -65,7 +65,7 @@ def draw_centered(draw_func, *args) -> None:
     original_setposition = turtle.setposition
     original_pendown = turtle.pendown
 
-    points = [] #список кортежей: координаты, через которые проходит черепаха
+    points = [] 
 
     def measured_fd(distance):
         points.append(turtle.position())
@@ -112,25 +112,25 @@ def draw_centered(draw_func, *args) -> None:
     width = max(max_x - min_x, 1)
     height = max(max_y - min_y, 1)
 
-    canvas = screen.getcanvas() #холст Tkinter в пикселях
-    canvas_width = canvas.winfo_width() #размер холста в пикселях
+    canvas = screen.getcanvas() #Tkinter
+    canvas_width = canvas.winfo_width() 
     canvas_height = canvas.winfo_height()
 
     scale = min(
-        (canvas_width - margin * 2) / width, #пиксели на координаты. связь
+        (canvas_width - margin * 2) / width, 
         (canvas_height - margin * 2) / height
-    ) #сколько пикселей на 1 единицу координат
+    )
 
     center_x = (min_x + max_x) / 2
     center_y = (min_y + max_y) / 2
 
-    half_width = canvas_width / (2 * scale) #Координаты Turtle
+    half_width = canvas_width / (2 * scale) #Turtle
     half_height = canvas_height / (2 * scale)
 
     screen.clear()
-    screen.setworldcoordinates( #гранифцы координат в Turtle, которые будут видны на экране
-        center_x - half_width, #левая граница
-        center_y - half_height, #нижняя граница
+    screen.setworldcoordinates(
+        center_x - half_width, 
+        center_y - half_height, 
         center_x + half_width,
         center_y + half_height
     )
