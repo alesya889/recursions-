@@ -158,7 +158,7 @@ def main() -> None:
             break
 
         elif choice == "1":
-            depth = get_int_input("Глубина рекурсии (целое > 0): ")
+            depth = get_int_input("Глубина рекурсии (целое > 0): ", minval = 0)
             angle = get_float_input("Угол (от 0 до 90): ", minval = 0, maxval = 90)
             size = get_float_input("Pазмер: ")
             turtle.reset()
@@ -167,7 +167,7 @@ def main() -> None:
 
         elif choice == "2":
             size = get_float_input("Pазмер: ")
-            n = get_int_input("Порядок n (целое > 0): ")
+            n = get_int_input("Порядок n (целое > 0): ", minval = 0)
             turtle.reset()
             turtle.hideturtle()
             draw_centered(draw_branch, size, n)
@@ -202,7 +202,7 @@ def main() -> None:
 
         elif choice == "7":
             order = get_int_input("Порядок (итерации): ")
-            size = get_float_input("Размер: ", minval=1, maxval=250)
+            size = get_float_input("Размер: ")
             turtle.reset()
             turtle.hideturtle()
             draw_centered(draw_ice_fractal_2, order, size)
