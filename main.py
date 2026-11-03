@@ -201,7 +201,7 @@ def main() -> None:
             draw_centered(draw_ice_fractal_1, order, size)
 
         elif choice == "7":
-            order = get_int_input("Порядок (итерации): ", minval=0, maxval=4)
+            order = get_int_input("Порядок (итерации): ")
             size = get_float_input("Размер: ", minval=1, maxval=250)
             turtle.reset()
             turtle.hideturtle()
